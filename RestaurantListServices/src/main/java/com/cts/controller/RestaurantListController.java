@@ -25,7 +25,7 @@ public class RestaurantListController {
 	@Autowired
 	RestaurantListService restaurantListService;
 	
-	@GetMapping("/restaurants")
+	@GetMapping("/restaurantsscs")
 	@ApiOperation(value= "find all restaurants",
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
