@@ -35,7 +35,7 @@ public class RestaurantListController {
 	@ApiOperation(value= "update restaurants list",
 			notes="pust new restaurant into the list",
 			response = Restaurant.class)
-	@PostMapping("/restaurants")
+	@PostMapping("/restaurantssss")
 	public void insertRestaurant(@RequestBody Restaurant restaurant) {
      restaurantListService.saveRestaurant(restaurant);
 	}
