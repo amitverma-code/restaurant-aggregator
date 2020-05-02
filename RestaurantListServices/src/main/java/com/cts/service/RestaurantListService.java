@@ -19,8 +19,8 @@ public class RestaurantListService {
 		return (List<Restaurant>) restaurantListRepository.findAll();
 	}
 	
-	public void saveRestaurant(Restaurant restaurantList) {
-		restaurantListRepository.save(restaurantList);
+	public void addRestaurant(Restaurant restaurant) {
+		restaurantListRepository.save(restaurant);
 	}
 	@Transactional
 	public List<Restaurant> findByrestaurantName(String name) {

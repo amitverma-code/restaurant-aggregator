@@ -37,7 +37,7 @@ public class RestaurantListController {
 			response = Restaurant.class)
 	@PostMapping("/restaurants")
 	public void insertRestaurant(@RequestBody Restaurant restaurant) {
-     restaurantListService.saveRestaurant(restaurant);
+     restaurantListService.addRestaurant(restaurant);
 	}
 	@ApiOperation(value= "find restaurant from restaurants list",
 			notes="use restaurant's name for searching",
