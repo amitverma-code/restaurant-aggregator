@@ -25,20 +25,24 @@ public class RestaurantListController {
 	@Autowired
 	RestaurantListService restaurantListService;
 	
-	@GetMapping("/restaurantsscs")
+	@GetMapping("/restaurantss")
 	@ApiOperation(value= "find all restaurants",
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
 	public List<Restaurant> getRestaurant(){
 		return restaurantListService.getAllRestaurant();
 	}
+	
+	
 	@ApiOperation(value= "update restaurants list",
 			notes="pust new restaurant into the list",
 			response = Restaurant.class)
 	@PostMapping("/restaurants")
-	public void insertRestaurant(@RequestBody Restaurant restaurant) {
+	public void addRestaurant(@RequestBody Restaurant restaurant) {
      restaurantListService.addRestaurant(restaurant);
 	}
+	
+	
 	@ApiOperation(value= "find restaurant from restaurants list",
 			notes="use restaurant's name for searching",
 			response = Restaurant.class)
@@ -46,6 +50,8 @@ public class RestaurantListController {
 	public List<Restaurant> getRestaurantByrestaurantName(@ApiParam(value="Name value for the restaurant you need to retrieve", required= true)@PathVariable String name) {
 		return restaurantListService.findByrestaurantName(name);
 	}
+	
+	
 	@ApiOperation(value= "update exisiting restaurant",
 			notes="update restaurant which is already in database",
 			response = Restaurant.class)
@@ -53,6 +59,7 @@ public class RestaurantListController {
 	public HttpStatus updateRestaurant(@RequestBody Restaurant restaurant) {
 		return restaurantListService.updateRestaurant(restaurant)  ? HttpStatus.ACCEPTED : HttpStatus.BAD_REQUEST;
 	}
+	
 	@ApiOperation(value= "delete restaurant from list",
 			notes="delete existing restaurant from restaurants list",
 			response = Restaurant.class)
