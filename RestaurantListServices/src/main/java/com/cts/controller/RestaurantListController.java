@@ -29,19 +29,19 @@ public class RestaurantListController {
 	@Autowired
 	RestaurantListService restaurantListService;
 	
-	@GetMapping("/restaurants")
-//	public String process(Model model, HttpSession session) {
-//		@SuppressWarnings("unchecked")
-//		List<String> messages = (List<String>) session.getAttribute("MY_SESSION_MESSAGES");
-//
-//		if (messages == null) {
-//			messages = new ArrayList<>();
-//		}
-//		model.addAttribute("sessionMessages", messages);
-//
-//		return "session created";
-//	}
-	@ApiOperation(value= "find all restaurants",
+	@GetMapping("/restaurants")  
+	public String process(Model model, HttpSession session) {
+		@SuppressWarnings("unchecked")
+		List<String> messages = (List<String>) session.getAttribute("MY_SESSION_MESSAGES");
+
+		if (messages == null) {
+			messages = new ArrayList<>();
+		}
+		model.addAttribute("sessionMessages", messages);
+
+		return "session created";
+	}
+	@ApiOperation(value= "find all restaurants p",
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
 	public List<Restaurant> getRestaurant(){
