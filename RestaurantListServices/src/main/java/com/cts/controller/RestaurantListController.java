@@ -25,7 +25,7 @@ public class RestaurantListController {
 	@Autowired
 	RestaurantListService restaurantListService;
 	
-	@GetMapping("/restaurantss")
+	@GetMapping("/restaurants")
 	@ApiOperation(value= "find all restaurants",
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
@@ -48,9 +48,9 @@ public class RestaurantListController {
 			response = Restaurant.class)
 	@RequestMapping(value = "/restaurants/{name}", method = RequestMethod.GET)
 	public List<Restaurant> getRestaurantByrestaurantName(@ApiParam(value="Name value for the restaurant you need to retrieve", required= true)@PathVariable String name) {
-		return restaurantListService.findByrestaurantName(name);
+		return restaurantListService.findByrestaurantName(name) ;
 	}
-	
+
 	
 	@ApiOperation(value= "update exisiting restaurant",
 			notes="update restaurant which is already in database",
