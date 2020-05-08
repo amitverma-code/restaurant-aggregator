@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,7 +33,8 @@ public class RestaurantListController {
 	@ApiOperation(value= "find all restaurants",
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
-	public List<Restaurant> getRestaurant(){
+	public List<Restaurant> getRestaurant(@RequestHeader(value="TXN_ID") String txnId){
+		ogger.error(txnId + "|" + "Sample error message");
 		logger.error("error happended");
 		logger.info("getRestaurant method accessed");
 		return restaurantListService.getAllRestaurant();
