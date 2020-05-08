@@ -34,7 +34,7 @@ public class RestaurantListController {
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
 	public List<Restaurant> getRestaurant(@RequestHeader(value="TXN_ID") String txnId){
-		ogger.error(txnId + "|" + "Sample error message");
+		logger.error(txnId + "|" + "Sample error message");
 		logger.error("error happended");
 		logger.info("getRestaurant method accessed");
 		return restaurantListService.getAllRestaurant();
