@@ -1,6 +1,7 @@
 package com.cts.model;
 
-public class Restaurants {
-	
+import java.util.List;
 
+public class Restaurants {
+	private List<Restaurant> restaurants;
 }
