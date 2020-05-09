@@ -33,8 +33,10 @@ public class RestaurantListController {
 	@ApiOperation(value= "find all restaurants",
 	notes="Return all restaurant with there detail",
 	response = Restaurant.class)
-	public List<Restaurant> getRestaurant(@RequestHeader(value="TXN_ID") String txnId){
-		logger.error(txnId + "|" + "Sample error message");
+	//@RequestHeader(value="TXN_ID") String txnId
+	public List<Restaurant> getRestaurant()
+	{
+		//logger.error(txnId + "|" + "Sample error message");
 		logger.error("error happended");
 		logger.info("getRestaurant method accessed");
 		return restaurantListService.getAllRestaurant();
