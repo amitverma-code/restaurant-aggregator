@@ -2,6 +2,8 @@ package com.cts.controller;
 
 import java.util.List;
 
+
+import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,8 +48,9 @@ public class RestaurantListController {
 	@ApiOperation(value= "update restaurants list",
 			notes="pust new restaurant into the list",
 			response = Restaurant.class)
-	@PostMapping("/restaurant")
-	public void addRestaurant(@RequestBody Restaurant restaurant) {
+
+	@PostMapping("/restaurants")
+	public void addRestaurant(@Valid @RequestBody Restaurant restaurant) {
      restaurantListService.addRestaurant(restaurant);
 	}
 	
