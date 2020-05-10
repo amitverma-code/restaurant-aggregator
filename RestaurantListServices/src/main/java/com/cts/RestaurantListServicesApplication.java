@@ -40,7 +40,7 @@ public class RestaurantListServicesApplication {
 				"Sample API for providing Restaurant Services",
 				"1.0",
 				"Free to use",
-				new springfox.documentation.service.Contact("Amit Kumar verma", "www.cognizant.com", "844198@cognizant.com"),
+				new springfox.documentation.service.Contact("Rajneesh Yadav", "www.cognizant.com", "844300@cognizant.com"),
 				"API License",
 				"http://cognizant.com",
 				Collections.emptyList());
