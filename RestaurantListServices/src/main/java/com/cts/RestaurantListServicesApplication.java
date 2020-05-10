@@ -4,6 +4,7 @@ import java.util.Collections;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 
@@ -14,7 +15,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-
+@EnableEurekaClient
 @SpringBootApplication
 @EnableSwagger2
 public class RestaurantListServicesApplication {
@@ -39,7 +40,7 @@ public class RestaurantListServicesApplication {
 				"Sample API for providing Restaurant Services",
 				"1.0",
 				"Free to use",
-				new springfox.documentation.service.Contact("Amit Kumar verma", "www.cognizant.com", "844198@cognizant.com"),
+				new springfox.documentation.service.Contact("Rajneesh Yadav", "www.cognizant.com", "844300@cognizant.com"),
 				"API License",
 				"http://cognizant.com",
 				Collections.emptyList());

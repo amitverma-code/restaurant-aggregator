@@ -1,5 +1,6 @@
 package com.cts.service;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,11 @@ public class RestaurantListService {
 	@Transactional
 	public void delete(Restaurant restaurant) {
 		restaurantListRepository.delete(restaurant);
+	}
+
+	public Optional<Restaurant> findById(String id) {
+		
+		return null;
 	}
 
 	
