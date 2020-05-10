@@ -38,8 +38,8 @@ assertEquals(2, restaurantListService.getAllRestaurant().size());
 @Test
 public void findByrestaurantNameTest() {
 	String name= "goodfood";
-	when(restaurantListRepository.findByrestaurantName(name)).thenReturn(Stream.of(new Restaurant("344","goodfood","bangalore","A.A Raman","north Indian","9/10")).collect(Collectors.toList()));
-	assertEquals(1, restaurantListService.findByrestaurantName(name).size());
+	when(restaurantListRepository.findByrestaurantNameContaining(name)).thenReturn(Stream.of(new Restaurant("344","goodfood","bangalore","A.A Raman","north Indian","9/10")).collect(Collectors.toList()));
+	assertEquals(1, restaurantListService.findByRestaurantName(name).size());
 }
 @Test
 public void deleteTest(){

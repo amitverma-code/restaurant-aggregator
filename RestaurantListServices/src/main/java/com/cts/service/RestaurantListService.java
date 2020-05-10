@@ -23,8 +23,12 @@ public class RestaurantListService {
 		restaurantListRepository.save(restaurant);
 	}
 	@Transactional
-	public List<Restaurant> findByrestaurantName(String name) {
-		return restaurantListRepository.findByrestaurantName(name);
+	public List<Restaurant> findByRestaurantName(String name) {
+		return restaurantListRepository.findByrestaurantNameContaining(name);
+	}
+	@Transactional
+	public List<Restaurant> findByRestaurantID(String id) {
+		return restaurantListRepository.findByrestaurantId(id);
 	}
 	@Transactional
 	public boolean updateRestaurant(Restaurant restaurant) {

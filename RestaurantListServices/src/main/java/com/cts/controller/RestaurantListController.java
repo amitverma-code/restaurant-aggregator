@@ -48,7 +48,15 @@ public class RestaurantListController {
 			response = Restaurant.class)
 	@RequestMapping(value = "/restaurants/{name}", method = RequestMethod.GET)
 	public List<Restaurant> getRestaurantByrestaurantName(@ApiParam(value="Name value for the restaurant you need to retrieve", required= true)@PathVariable String name) {
-		return restaurantListService.findByrestaurantName(name) ;
+		return restaurantListService.findByRestaurantName(name) ;
+	}
+	
+	@ApiOperation(value= "find restaurant from restaurants list",
+			notes="use restaurant's id for searching",
+			response = Restaurant.class)
+	@RequestMapping(value = "/restaurant/{id}", method = RequestMethod.GET)
+	public List<Restaurant> getRestaurantByrestaurantId(@ApiParam(value="ID value for the restaurant you need to retrieve", required= true)@PathVariable String id) {
+		return restaurantListService.findByRestaurantID(id) ;
 	}
 
 	
