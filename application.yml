@@ -1,8 +1,9 @@
 server:
-  port: 9098    #port number
+  port: 0    #port number
  
 eureka:
   instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
   client:
