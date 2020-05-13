@@ -14,10 +14,6 @@ eureka:
     lease:
       duration: 5
  
-spring:
-  application:
-    name: aggregator-service    #service name
- 
 logging:
   level:
     com.example.howtodoinjava: DEBUG
